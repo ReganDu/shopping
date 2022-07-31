@@ -393,9 +393,7 @@ export default {
     //1：发请求，讲产品加入到数据库（通知服务器）
    async getShopList(){
      //请求成功
-    try{await this.$store.dispatch('shopList',
-    {skuId:this.$route.params.skuid, skuNum:this.skuNum
-    })
+    try{await this.$store.dispatch('shopList',{skuId:this.$route.params.skuid, skuNum:this.skuNum})
     //这里我们已经向服务器发送了请求，获得了数据，只是需要把数据展示在购物车里面，所以们就不用再
     //发请求了，直接传递我们选中的数据就好了，但是里面数据非常多，skuinfo是一个object，里面信息很多
     //params一般用于一些简单的数字，单词。所以我们用query传递,但是如果写入query，这个对象太复杂了
